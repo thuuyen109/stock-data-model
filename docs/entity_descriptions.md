@@ -2,7 +2,7 @@
 
 Detailed explanation of all entities based on the ERD.
 
----
+
 ## STOCK_SYMBOLS
 
 Catalog of all listed and delisted stock symbols.
@@ -11,7 +11,7 @@ Catalog of all listed and delisted stock symbols.
 - Includes: organization name, exchange, product group, validity range.
 - Serves as the core dimension for joining price data and financial reports.
 
----
+
 ## COMPANY_PROFILES
 
 Company profile information.
@@ -19,7 +19,7 @@ Company profile information.
 - Joined via: `symbol_id`
 - Contains: ICB sectors, company history, business description, charter capital.
 
----
+
 ## INGESTION_SOURCES
 
 Catalog of all data ingestion sources.
@@ -27,7 +27,7 @@ Catalog of all data ingestion sources.
 - Includes: source name, API endpoint, frequency, active flag.
 - Primarily used for tracking intraday price data ingestion.
 
----
+
 ## QUOTE_INTRADAY
 
 Real-time or intraday price data (per second/minute).
@@ -36,7 +36,7 @@ Real-time or intraday price data (per second/minute).
 - References: `source_id`
 - Used for backtesting engines and real-time dashboards.
 
----
+
 ## QUOTE_HISTORICAL
 
 Daily OHLCV historical market data.
@@ -44,7 +44,7 @@ Daily OHLCV historical market data.
 - **Composite Key**: (`symbol_id`, `time`)
 - Used to build long-term price fact tables and ML features.
 
----
+
 ## FINANCIAL_DICT
 
 Dictionary of all financial metrics.
@@ -53,7 +53,7 @@ Dictionary of all financial metrics.
 - Includes: metric code, English name, metric type, reporting unit.
 - Shared reference table for all financial metric datasets.
 
----
+
 ## REPORT_PERIOD
 
 Represents a financial reporting period.
@@ -62,7 +62,7 @@ Represents a financial reporting period.
 - Includes: report year, report length (quarter/year), symbol.
 - Parent entity for all four financial report tables.
 
----
+
 ## BALANCE_SHEET / INCOME_STATEMENT / CASHFLOW / MARKET_RATIOS
 
 Four tables containing structured financial metrics.
