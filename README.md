@@ -55,16 +55,16 @@ The current data model focuses primarily on basic OHLCV (Open, High, Low, Close,
 
 **1. Support for Corporate Actions (Dividends, Splits)**
 
-This is a **mandatory requirement** to accurately calculate **Total Return** and correctly adjust historical stock prices. We will need to implement dedicated event tables (Fact Tables) to record and apply changes related to dividends and stock split/reverse split ratios.
+> This is a **mandatory requirement** to accurately calculate **Total Return** and correctly adjust historical stock prices. We will need to implement dedicated event tables (Fact Tables) to record and apply changes related to dividends and stock split/reverse split ratios.
 
 **2. Add Dimension Tables for Sector / Industry Hierarchies**
 
-Classifying companies by their Sector and Industry is crucial for effective group analysis. This descriptive data should be normalized into separate **Dimension Tables** to improve the efficiency of filtering, grouping, and analytical queries on the main fact tables.
+> Classifying companies by their Sector and Industry is crucial for effective group analysis. This descriptive data should be normalized into separate **Dimension Tables** to improve the efficiency of filtering, grouping, and analytical queries on the main fact tables.
 
 **3. Add Materialized Views for Daily Aggregates**
 
-To accelerate queries for frequently calculated technical indicators and aggregate metrics (e.g., Moving Averages, RSI), we should define and materialize these views. This offloads computational burden by pre-calculating and physically storing the results.
+> To accelerate queries for frequently calculated technical indicators and aggregate metrics (e.g., Moving Averages, RSI), we should define and materialize these views. This offloads computational burden by pre-calculating and physically storing the results.
 
 **4. Consider ClickHouse for Intraday Data at Scale**
 
-Intraday data (minute-by-minute or tick data) is extremely high-volume and inherently time-series in nature. We should consider using columnar database management systems like **ClickHouse** to ensure high-performance storage and analytical query speed for large-scale granular data.
+> Intraday data (minute-by-minute or tick data) is extremely high-volume and inherently time-series in nature. We should consider using columnar database management systems like **ClickHouse** to ensure high-performance storage and analytical query speed for large-scale granular data.
