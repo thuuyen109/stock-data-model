@@ -159,6 +159,7 @@ erDiagram
 - Design a clean analytical schema for stock data
 - Define clear entities and relationships
 - Provide reproducible DDL for database creation
+- Apply modeling best practices: surrogate keys, star schema, partitioning, indexing
 - Demonstrate test coverage and quality checks
 - Enable analysts, quants, or ML teams to query reliable data
 
