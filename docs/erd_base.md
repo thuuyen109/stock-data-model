@@ -1,6 +1,6 @@
-# Raw Layer
+# Base Layer
 
-This diagram represents the raw ingestion layer of the stock data system.
+This diagram represents the base ingestion layer of the stock data system.
 Tables in this layer store data exactly as received from upstream providers, with minimal preprocessing.
 
 ---
@@ -24,25 +24,18 @@ Key fields:
 
 ---
 ## INGESTION_SOURCES
-
 Registry of raw data providers and ingestion configurations.
-
 Key fields:
-
-source_id — primary key
-
-source_name, source_url
-
-frequency
-
-api_endpoint
-
-is_active
+- `source_id` — primary key
+- `source_name`, `source_url`
+- `frequency`
+- `api_endpoint`
+- `is_active`
 
 Used to track data lineage for intraday market data.
 
-Relationships
+---
+## Relationships
 
-STOCK_SYMBOLS 1—N COMPANY_PROFILES
-
-INGESTION_SOURCES 1—N QUOTE_INTRADAY
+- `STOCK_SYMBOLS` 1—N `COMPANY_PROFILES`
+- `INGESTION_SOURCES` 1—N `QUOTE_INTRADAY`
