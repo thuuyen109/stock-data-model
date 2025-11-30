@@ -1,9 +1,10 @@
-# Raw Layer — Entity-Relationship Diagram
+# Raw Layer
 
 This diagram represents the raw ingestion layer of the stock data system.
 Tables in this layer store data exactly as received from upstream providers, with minimal preprocessing.
 
 --
+
 STOCK_SYMBOLS
 
 Stores all stock symbols with metadata such as exchange, organization info, product grouping, and validity intervals.
