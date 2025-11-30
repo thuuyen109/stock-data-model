@@ -78,15 +78,11 @@ Data supports different use cases:
 
 ```mermaid
 flowchart LR
-    A[Data Sources<br>• Exchanges APIs<br>• Market Data Feeds<br>• Financial Reports APIs] --> B[Ingestion Layer<br>Airflow | Python | Cron]
-
-    B --> C[RAW Zone<br>STOCK_SYMBOLS, QUOTE*, REPORT_PERIOD...]
-
-    C --> D[CORE Layer<br>• Dim Symbol<br>• Fact Prices<br>• Fact Financials]
-
-    D --> E[DATA MARTS<br>• Market Analytics<br>• Financial Ratios<br>• Screening Models]
-
-    E --> F[BI / ML Apps<br>• Dashboard<br>• Backtesting Engine<br>• ML Models]
+    A[Data Sources<br>• Exchanges APIs<br>• Market Data Feeds<br>• Financial Reports APIs] --> B[Ingestion Layer<br>Airflow &vert; Python &vert; Cron]
+    B --> C[RAW Zone<br>STOCK_SYMBOLS, QUOTE*, REPORT_PERIOD...]
+    C --> D[CORE Layer<br>• Dim Symbol<br>• Fact Prices<br>• Fact Financials]
+    D --> E[DATA MARTS<br>• Market Analytics<br>• Financial Ratios<br>• Screening Models]
+    E --> F[BI / ML Apps<br>• Dashboard<br>• Backtesting Engine<br>• ML Models]
 ```
 
 
