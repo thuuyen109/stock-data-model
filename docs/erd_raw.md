@@ -3,39 +3,27 @@
 This diagram represents the raw ingestion layer of the stock data system.
 Tables in this layer store data exactly as received from upstream providers, with minimal preprocessing.
 
---
-
-STOCK_SYMBOLS
-
+---
+## STOCK_SYMBOLS
 Stores all stock symbols with metadata such as exchange, organization info, product grouping, and validity intervals.
-
 Key fields:
+- `symbol_id` — surrogate primary key
+- `symbol` — stock ticker
+- `exchange`, `type`, `product_grp_id`
+- `organ_name`, `organ_short_name`
+- `valid_from`, `valid_to`
 
-symbol_id — surrogate primary key
-
-symbol — stock ticker
-
-exchange, type, product_grp_id
-
-organ_name, organ_short_name
-
-valid_from, valid_to
-
-COMPANY_PROFILES
-
+---
+## COMPANY_PROFILES
 Contains company-level metadata for each stock symbol.
-
 Key fields:
+- `symbol_id` — `foreign key`
+- `issue_share`, `charter_capital`
+- `history`, `company_profile`
+- Industry classification (ICB level 2/3/4)
 
-symbol_id — foreign key
-
-issue_share, charter_capital
-
-history, company_profile
-
-Industry classification (ICB level 2/3/4)
-
-INGESTION_SOURCES
+---
+## INGESTION_SOURCES
 
 Registry of raw data providers and ingestion configurations.
 
