@@ -56,7 +56,7 @@ EXECUTE FUNCTION gen_metric_id();
 
 
 -----------------------------------------------------
-/* Partition on Postgres */
+/* Partition on Postgres, control partition by pg_parman */
 CREATE OR REPLACE FUNCTION stg_dev.create_dynamic_partitions(
     p_schema_name TEXT,
     p_parent_table_name TEXT,
