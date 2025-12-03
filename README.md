@@ -153,6 +153,28 @@ erDiagram
 ---
 ## Project Structure
 
+```bash
+.
+├── README.md
+├── data_modeling_overview.md
+├── docs
+│   ├── data_flow_architecture.md
+│   ├── entity_descriptions.md
+│   ├── erd_base.md
+│   ├── erd_financials.md
+│   └── erd_quotes.md
+└── sql
+    ├── ddl
+    │   ├── defining_tables.sql
+    │   ├── functions_and_trigger.sql
+    │   └── reference_and_constraints.sql
+    └── tests
+        ├── test_finanical_dict.sql
+        ├── test_report_period.sql
+        └── test_stock_symbols.sql
+
+```
+
 ---
 ## Objectives
 
